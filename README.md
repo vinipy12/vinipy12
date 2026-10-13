@@ -37,14 +37,9 @@ Most AI failures I find aren't bad model output. They're green gates that never 
 * Built a multi-agent development harness. A Claude Code orchestrator plans and reviews while parallel Codex agents implement, each in its own git worktree. Hooks and side-effect guards enforce the rules, and every issue passes about 22 automated gates. The harness itself is covered by roughly 1,000 tests.
 * Ships evidence-first LLM products: website-to-company verification with independent agent labelers and a judge, and a multi-provider eval suite comparing local and frontier models.
 
-### AI Consultant / Software Engineer | Trafilea (2026 to present)
-* Built most of a NestJS/TypeScript data-ingestion hub. Its SQS consumers tell retryable failures from permanent ones and extend visibility timeouts with heartbeats. It also covers the ClickHouse integration, backfills, and webhook and Slack integrations.
-* Built a production n8n workflow that turns Slack IT-support threads into deduplicated incidents. A LangChain summarization chain on OpenAI summarizes them behind output guardrails, and the workflow publishes them to SNS for the ingestion hub.
-* Builds LangGraph agents and AI reporters, plus Python Temporal workers that move AI report generation off a single-concurrency API task.
-* Ships TypeScript/Fastify endpoints and React/Tailwind back-office screens, and provisions AWS with Terraform and Terragrunt.
-
-### Founding AI Engineer | Alphasearch (2025 to present)
-* Owns the platform end to end: a FastAPI/MongoDB backend, a React frontend, and Luigi ETL pipelines over a corpus of roughly 10M companies.
+### Founding AI Engineer & Technical Lead | AlphaSearch (June 2025 to present)
+* Owns the platform end to end: a FastAPI/MongoDB backend, a React frontend, and Luigi ETL pipelines over a corpus of roughly 10M companies. Previously led a team of 3 developers.
+* Built a Playwright data-acquisition pipeline that collected 200,000+ company profiles across 7,000+ targeted queries.
 * Built a conversational discovery agent and a ReAct enrichment agent on a multi-provider LLM layer, with Langfuse tracing and Atlas Vector Search.
 * Built retrieval evals (Voyage, Cohere and BGE embeddings and rerankers) and an LLM judge for lead quality. A $0.70 eval run against a real population caught a regression that halved named leads.
 * Designed the LLM-as-judge contract behind lead verification. Each verdict needs verbatim evidence, validated as shared NFKC quotes. Failures are isolated per candidate, and an independent audit judge checks the results.
