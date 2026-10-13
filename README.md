@@ -38,7 +38,7 @@ Most AI failures I find aren't bad model output. They're green gates that never 
 * Ships evidence-first LLM products: website-to-company verification with independent agent labelers and a judge, and a multi-provider eval suite comparing local and frontier models.
 
 ### Founding AI Engineer & Technical Lead | AlphaSearch (June 2025 to present)
-* Owns the platform end to end: a FastAPI/MongoDB backend, a React frontend, and Luigi ETL pipelines over a corpus of roughly 10M companies. Previously led a team of 3 developers.
+* Owns the platform end to end: a FastAPI/MongoDB backend, a React frontend, and Luigi ETL pipelines over a corpus of roughly 10M companies. Managed two teammates (an intern and an OSINT specialist): assigned work, ran hiring interviews and bridged the team with the CEO.
 * Built a Playwright data-acquisition pipeline that collected 200,000+ company profiles across 7,000+ targeted queries.
 * Built a conversational discovery agent and a ReAct enrichment agent on a multi-provider LLM layer, with Langfuse tracing and Atlas Vector Search.
 * Built retrieval evals (Voyage, Cohere and BGE embeddings and rerankers) and an LLM judge for lead quality. A $0.70 eval run against a real population caught a regression that halved named leads.
