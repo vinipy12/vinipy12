@@ -1,75 +1,74 @@
-# 👋 Hi, I'm Vinicius Cavalcante
+# Hi, I'm Vinicius Cavalcante
 
-Staff AI Engineer with 5+ years building production AI systems — and, increasingly, the systems that keep them honest.
+AI Engineer with 5 years of experience shipping production LLM systems and the backends around them, in **Python and TypeScript**. Based in Manaus, Brazil, working remotely in English and Portuguese.
 
-I work on **agent infrastructure and AI reliability**: multi-agent orchestration, LLM-as-judge contracts, evaluation harnesses with real spend controls, and the CI gates that catch a model's confident wrong answer before a customer does. Before that, and still: large-scale retrieval, RAG, and the full-stack work to ship it.
+I build **agentic systems that can be trusted in production**: multi-provider LLM layers, retrieval, evaluation harnesses and LLM judges. Underneath them sit event-driven services, queues, billing and data pipelines. I also build the harnesses I develop with. A Claude Code orchestrator directs parallel Codex agents in isolated worktrees, and every change has to clear guardrails enforced by tooling, not by prompts.
 
-My current focus is the unglamorous half of applied AI — **proving a system does what it claims**. Most AI failures I find aren't bad model output; they're green gates that never looked.
+Most AI failures I find aren't bad model output. They're green gates that never looked.
 
-## 💻 Tech Stack
+## Tech stack
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![NestJS](https://img.shields.io/badge/NestJS-E0234E?style=for-the-badge&logo=nestjs&logoColor=white)
+![LangGraph](https://img.shields.io/badge/LangGraph-1C3C3C?style=for-the-badge&logo=langchain&logoColor=white)
 ![Claude](https://img.shields.io/badge/Claude-D97757?style=for-the-badge&logo=anthropic&logoColor=white)
-![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=for-the-badge&logo=openai&logoColor=white)
-![MCP](https://img.shields.io/badge/MCP-000000?style=for-the-badge&logo=modelcontextprotocol&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=FastAPI&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white)
+![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white)
+![Terraform](https://img.shields.io/badge/Terraform-844FBA?style=for-the-badge&logo=terraform&logoColor=white)
 ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?style=for-the-badge&logo=githubactions&logoColor=white)
 
----
+* **AI & LLMs:** LangGraph, LangChain, multi-provider LLM layers (Anthropic, OpenAI, Gemini) with retries and structured-output fallback, ReAct agents and tool use, RAG on MongoDB Atlas Vector Search, embedding and reranking evals, LLM-as-judge, Langfuse, LangSmith
+* **Agentic engineering:** Claude Code, Codex and Cursor; multi-agent orchestration, hooks and side-effect guards, worktree isolation, spec-driven development, reviewing AI-generated code
+* **Backend:** Python (FastAPI, Pydantic, asyncio, Temporal, Luigi), TypeScript (NestJS, Fastify), REST APIs, webhooks, SQS consumers with retries and DLQs, Stripe billing, n8n
+* **Data:** MongoDB, PostgreSQL, ClickHouse, Redis, DynamoDB, SQLite
+* **Platform:** AWS (ECS, Lambda, SQS, SNS, S3, DynamoDB), Terraform and Terragrunt, Docker, GitHub Actions, Heroku, Datadog
+* **Frontend & testing:** React, Tailwind, MUI, pytest, Jest, Playwright, mutation testing (mutmut, Stryker)
 
-* **Agent systems:** multi-agent orchestration, MCP servers, tool-use contracts, sandboxing and permission boundaries, worktree isolation, headless agent fleets
-* **AI reliability:** LLM-as-judge design, evidence/citation contracts, eval harnesses, golden datasets, calibration, spend caps and cost accounting, mutation testing on money paths
-* **Retrieval:** RAG at 5M+ documents, MongoDB Atlas Vector Search (HNSW), hybrid retrieval, recall/precision benchmarking, embedding quality gates
-* **Backend:** Python, FastAPI, Django, Flask, MongoDB, PostgreSQL, Redis, async/concurrency, tenant isolation, idempotency and transactional correctness
-* **Platform:** GitHub Actions, Docker, Heroku, AWS (EC2, SES, IAM), GCP, Jenkins, CI quality ratchets
-* **Frontend:** JavaScript, React
+## Experience
 
-## 🚀 Professional Experience
+### Founder & Principal AI Engineer | Lateralus AI Lab (2026 to present)
+* Built a multi-agent development harness. A Claude Code orchestrator plans and reviews while parallel Codex agents implement, each in its own git worktree. Hooks and side-effect guards enforce the rules, and every issue passes about 22 automated gates. The harness itself is covered by roughly 1,000 tests.
+* Ships evidence-first LLM products: website-to-company verification with independent agent labelers and a judge, and a multi-provider eval suite comparing local and frontier models.
 
-### Staff AI Engineer | AlphaSearch (Remote)
-* Built the agent harness the team develops with: a Claude orchestrator directing parallel headless Codex implementer lanes, each isolated to its own git worktree, with guardrails enforced by tooling rather than prose — `PreToolUse` hooks, launcher sandbox refusals, and a one-command verification pass that re-derives every claim outside the agent's sandbox.
-* Designed the LLM-as-judge contract behind lead verification: verbatim-evidence requirements with shared NFKC quote validation, per-candidate failure isolation, and an independent audit judge. Diagnosed and fixed a defect where the judge was marked malformed for *correctly rejecting* candidates, because the contract demanded a supporting quote for a negative verdict.
-* Built a production readiness harness with hard spend caps, a no-spend preflight, frozen configuration snapshots keyed to an evaluated commit SHA, secret/PII redaction, and human adjudication records — so a launch decision rests on reproducible evidence instead of a green check.
-* Hardened CI against gates that pass without looking: a test-reachability check that fails when any test file is executed by no job (it found auth and subscription integration tests running nowhere), plus mutation-score ratchets over credit and billing paths.
-* Found and closed cross-tenant isolation defects in review, including account-private company records readable through an unscoped shared-collection query and leaking into a shared embedding index via semantic search.
-* Architected and deployed the RAG system: 5M+ documents on MongoDB Atlas Vector Search (HNSW), sub-10-second retrieval, with Cohere embeddings/reranking and Gemini chat, on Heroku.
-* Engineer and maintain the full-stack application — FastAPI backend, MongoDB, React frontend.
+### AI Consultant / Software Engineer | Trafilea (2026 to present)
+* Built most of a NestJS/TypeScript data-ingestion hub. Its SQS consumers tell retryable failures from permanent ones and extend visibility timeouts with heartbeats. It also covers the ClickHouse integration, backfills, and webhook and Slack integrations.
+* Built a production n8n workflow that turns Slack IT-support threads into deduplicated incidents. A LangChain summarization chain on OpenAI summarizes them behind output guardrails, and the workflow publishes them to SNS for the ingestion hub.
+* Builds LangGraph agents and AI reporters, plus Python Temporal workers that move AI report generation off a single-concurrency API task.
+* Ships TypeScript/Fastify endpoints and React/Tailwind back-office screens, and provisions AWS with Terraform and Terragrunt.
 
-### Software Engineer | Sidia Instituto de Ciência e Tecnologia
-* Designed and optimized RESTful APIs with FastAPI, serving 500+ daily users.
-* Reduced legacy process execution times by 30% through SQL tuning and code optimization.
-* Built and maintained CI/CD pipelines (Jenkins, Docker), cutting deployment times by 40%.
-* Boosted unit and integration test coverage to 80% across all applications.
+### Founding AI Engineer | Alphasearch (2025 to present)
+* Owns the platform end to end: a FastAPI/MongoDB backend, a React frontend, and Luigi ETL pipelines over a corpus of roughly 10M companies.
+* Built a conversational discovery agent and a ReAct enrichment agent on a multi-provider LLM layer, with Langfuse tracing and Atlas Vector Search.
+* Built retrieval evals (Voyage, Cohere and BGE embeddings and rerankers) and an LLM judge for lead quality. A $0.70 eval run against a real population caught a regression that halved named leads.
+* Designed the LLM-as-judge contract behind lead verification. Each verdict needs verbatim evidence, validated as shared NFKC quotes. Failures are isolated per candidate, and an independent audit judge checks the results.
+* Implemented Stripe billing: a transactional credit ledger, signature-verified webhooks and a background event processor. Mutation testing and dedicated CI jobs guard the money paths.
+* Hardened CI against gates that pass without looking. A test-reachability check fails when a test file runs in no job, and mutation-score ratchets cover the credit and billing paths.
 
-## 📊 GitHub Stats
-![Your GitHub stats](https://github-readme-stats.vercel.app/api?username=vinipy12&show_icons=true&theme=radical)
+### Software Engineer | SIDIA - Samsung R&D (2021 to 2025)
+* Designed and optimized FastAPI REST APIs serving 500+ daily users.
+* Cut legacy process execution times by 30% through SQL tuning and code optimization.
+* Built Jenkins and Docker CI/CD pipelines, cutting deployment times by 40%.
+* Raised unit and integration test coverage to 80% across all applications.
 
-## 🔥 Selected Work
+## Open source
 
-### 🤝 Multi-Agent Development Harness
-A version-controlled orchestration harness where a Claude orchestrator plans and reviews while parallel Codex lanes implement — one git worktree each, no shared state. Guardrails are enforced by tools, not documentation: hooks that block the orchestrator from writing application code, a launcher that refuses unsafe sandbox modes, and a verification script that runs the checks a sandboxed agent structurally cannot. Includes a conformance pass that answers the one question gates can't — *did the agent build what was actually asked?*
+* [**lateralus-pramana**](https://github.com/vinipy12/lateralus-pramana): evidence-based company website verification. Deterministic evidence collection, three independent agent labelers and a judge, and a transactional SQLite store.
+* [**lateralus-story-finder**](https://github.com/vinipy12/lateralus-story-finder): a Telegram bot that writes weekly Reddit briefs in Brazilian Portuguese, with a multi-provider eval suite (Anthropic, OpenAI, Codex, Ollama), a scoring rubric and LLM-judge reports.
 
-### 🧪 Evidence-Grade Evaluation Harness
-A readiness gate for a paid, LLM-driven pipeline: mutually exclusive preflight and paid-run modes, per-case cost reservations against a hard cap, a frozen config snapshot bound to the evaluated SHA, redaction of credentials and PII, an independent audit judge, and adjudication records for human review. Designed so the honest outcome is often *"not ready"* — and so that verdict is reproducible.
+## What I'm working on
 
-### 🔍 RAG System for Large-Scale Document Retrieval
-Retrieval-Augmented Generation over a 5M+ document MongoDB collection using LangChain, local Ollama models and cloud-hosted models, with Cohere embeddings/reranking and Gemini for chat. Optimized indexing and retrieval for low latency, deployed on Heroku.
+- Making agent verification loops trustworthy enough to lean on. The bottleneck is proving that a gate covers the code it claims to guard, not model capability.
+- Calibrated LLM judges: evidence contracts, legitimate abstention, and measuring whether "high confidence" means anything.
+- Retrieval quality beyond recall: precision on weak slices, and canonicalizing free text before it becomes a filter.
 
-### 🔄 CRM Backend System
-A scalable Django backend with RESTful APIs deployed on AWS EC2 using Docker. Implemented AWS SES integration for notifications and secure IAM roles for access control.
+## Reach me
 
-### 🔬 COVID-19 Detection CNN
-A convolutional neural network achieving 92% accuracy detecting COVID-19 from X-ray images, using Python, Keras and TensorFlow.
-
-## 🌱 What I'm working on
-
-- Making agent verification loops trustworthy enough to lean on — the bottleneck is proving a gate covers the code it claims to guard, not model capability
-- Calibrated LLM judges: evidence contracts, legitimate abstention, and measuring whether "high confidence" means anything
-- Retrieval quality beyond recall — precision on weak slices, and canonicalizing free text before it becomes a filter
-
-## 📫 How to reach me
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vinicius-cavalcante-827565140/)
+[![Email](https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:vinicius.loureiro.cavalcante12@gmail.com)
